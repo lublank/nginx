@@ -236,3 +236,17 @@ http {
 
     # /usr/local/nginx/sbin/nginx -s reopen
 
+**加入环境变量**
+
+    # vi /etc/profile.d/nginx.sh  
+        
+    写入：export PATH=$PATH:/usr/local/nginx/sbin/  
+  
+    # source /etc/profile.d/nginx.sh
+
+---
+
+    启动：nginx  
+    重载：nginx -s reload  
+    快速停止：nginx -s stop  
+    有序退出：nginx -s quit
