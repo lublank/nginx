@@ -60,7 +60,7 @@ tar -zxvf nginx-1.12.1.tar.gz
     # make
     # make install
 
-> <font color=#cb3837>注意：--with-pcre=DIR 是pcre源码目录，而不是编译安装后的目录。</font>
+<font color="#cb3837">注意：--with-pcre=DIR 是pcre源码目录，而不是编译安装后的目录。</font>
 
 4、查看Nginx版本：
 
