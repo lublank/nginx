@@ -12,7 +12,7 @@ Nginx的安装依赖于以下三个包，意思就是在安装Nginx之前首先�
 
 **_CentOS系统_ 安装编译工具及库文件：**
 
-> yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
+    # yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
 
 **命令下载：**
 
@@ -30,19 +30,19 @@ wget http://nginx.org/download/nginx-1.12.1.tar.gz
 
 1、解压pcre：
 
-> tar -zxvf pcre-8.40.tar.gz
+    # tar -zxvf pcre-8.40.tar.gz
 
 2、进入安装包目录：
 
-> cd pcre-8.40
+    # cd pcre-8.40
 
 3、配置、编译、安装：
 
-> ./configure
+    # ./configure
 
-> make
+    # make
 
-> make install
+    # make install
 
 **安装Nginx：**
 
@@ -52,27 +52,24 @@ tar -zxvf nginx-1.12.1.tar.gz
 
 2、进入安装包目录：
 
-> cd nginx-1.12.1
+    # cd nginx-1.12.1
 
 3、配置、编译、安装：
 
-> ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/pcre-8.40
+    # ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/pcre-8.40
+    # make
+    # make install
 
-> make
-
-> make install
-
-    注意：--with-pcre=DIR 是pcre源码目录，而不是编译安装后的目录。
+> <font color=#cb3837>注意：--with-pcre=DIR 是pcre源码目录，而不是编译安装后的目录。</font>
 
 4、查看Nginx版本：
 
-> /usr/local/nginx/sbin/nginx -v
+    # /usr/local/nginx/sbin/nginx -v
 
 **创建 Nginx 运行使用的用户 www：**
 
-> /usr/sbin/groupadd www
-
-> /usr/sbin/useradd -g www www
+    # /usr/sbin/groupadd www
+    # /usr/sbin/useradd -g www www
 
 **配置 `nginx.conf` ：**
 
@@ -213,29 +210,29 @@ http {
 
 **检查conf配置是否正确：**
 
-> /usr/local/nginx/sbin/nginx -t
+    # /usr/local/nginx/sbin/nginx -t
 
 **启动Nginx：**
 
-> /usr/local/nginx/sbin/nginx
+    # /usr/local/nginx/sbin/nginx
 
 **重新载入Nginx配置（平滑重启）：**
 
-> /usr/local/nginx/sbin/nginx -s reload
+    # /usr/local/nginx/sbin/nginx -s reload
 
 **重启Nginx：**
 
-> /usr/local/nginx/sbin/nginx
+    # /usr/local/nginx/sbin/nginx
 
 **快速关闭Nginx：**
 
-> /usr/local/nginx/sbin/nginx -s stop
+    # /usr/local/nginx/sbin/nginx -s stop
 
 **正常关闭Nginx：**
 
-> /usr/local/nginx/sbin/nginx -s quit
+    # /usr/local/nginx/sbin/nginx -s quit
 
 **重新打开日志文件：**
 
-> /usr/local/nginx/sbin/nginx -s reopen
+    # /usr/local/nginx/sbin/nginx -s reopen
 
